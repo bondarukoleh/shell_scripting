@@ -1,0 +1,10 @@
+Script
+Command line programm that contains a series of commands.
+Shell access the interpreter and executes commands in script one by another.
+Script either in PATH variable (you can execute it from everywhere) or you can execute in with "./path_to_script/scr.sh"
+
+# (sharp) ! (bang) (shebang) /usr/bin/env bash (path to interpreter for commands listened in file, depends on OS)
+There a few interpreters /bin/csh, ksh, zsh.
+
+If you do not adding shebang - that script will be executed by default shell in OS, witch can cost problems,
+maybe your shell by default is ok, but you don't know nothing about other guys.
