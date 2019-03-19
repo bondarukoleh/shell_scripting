@@ -71,7 +71,17 @@ done
 
 
 PASSED ARGUMENTS
-./script.sh arg1 arg2
-$0:"script.sh"
+./script.sh arg1 arg2=value
+$0:"script.sh" (same as ${0})
 $1:"arg1"
-$2:"arg2"
+$2:"arg2=value"
+$@:"arg1 arg2=value"
+
+So 0 argument - is useless in most cases from my side, it's pointing on script that was passed to bash
+
+STDIN
+We can read from stdin
+read -p "Text of prompt (hint) what you are expecting user should input" VARIABLE_TO_STORE_USERS_INPUT
+
+read -p "Please enter your name: " USER_NAME
+echo "You're name is $USER_NAME"
