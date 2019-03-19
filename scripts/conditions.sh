@@ -1,8 +1,27 @@
-#!/bin/bash
-FILE="/etc/hosts"
-if [ -f $FILE ]
+#!/usr/bin/env bash
+
+FILE="/etc"
+if [ -d $FILE ]
 then
-	echo "$file found."
-else
-	echo "$file not found."
+	echo "$FILE is directory"
+fi
+
+# Doesn't work with "not empty string", Err -too many arguments
+SOME_STRING1="not_empty_string"
+SOME_STRING2="not_empty_string"
+if [ -n $SOME_STRING1 ]
+then
+	echo "$SOME_STRING1 - is not empty"
+fi
+
+if [ $SOME_STRING1 = $SOME_STRING2 ]
+then
+	echo "$SOME_STRING1 - is equal to - $SOME_STRING2"
+fi
+
+ARG1=15
+ARG2=10
+if [ $ARG1 -gt $ARG2 ]
+then
+	echo "$ARG1 - is greater than - $ARG2"
 fi

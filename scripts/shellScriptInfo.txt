@@ -14,6 +14,64 @@ VARIABLE_NAME="value" - no spaces, by convention variable name in upper case. Ca
 Without quotes only text without spaces, can contain "_" and digits, but not start from digits.
 To use variable put "My $VAR_NAME string" before name, ore "My ${VAR_NAME} string"
 
-TESTS
-We cat create conditions
-[ condition_to_test ]
+CONDITIONS
+We can create conditions:
+if [ condition_to_test ] 
+then
+  command1
+  command2
+elseif [next_condition_to_test ]
+then
+  command3
+  command4
+else
+  command5
+  command6
+fi (if spelled backwards)
+
+If we meet conditions - condition return true, and command exits with status 0, if not - false - 1 status.
+
+Conditions:
+-d $FILE - FILE is directory? 
+-e $FILE - FILE is existing file? 
+-f $FILE - FILE is regular file? 
+-r $FILE - FILE is readable file by user? 
+-s $FILE - FILE is not empty file? 
+-w $FILE - FILE is writable file by user? 
+-x $FILE - FILE is executable file by user? 
+
+-z $STRING - STRING is empty?
+-n $STRING - STRING is not empty?
+$STRING1 = $STRING2 - are strings equal?
+$STRING1 != $STRING2 - are strings not equal?
+
+$ARG1 -eq $ARG2 - are args equal?
+$ARG1 -ne $ARG2 - are args not equal?
+$ARG1 -lt $ARG2 - is arg1 is less than arg2?
+$ARG1 -le $ARG2 - is arg1 is less than or equal arg2?
+$ARG1 -gt $ARG2 - is arg1 is greater than arg2?
+$ARG1 -ge $ARG2 - is arg1 is greater than or equal arg2?
+
+Boolean Operator     Numeric     String  
+===================  =======     ======  
+Equals                 -eq        =      
+Not Equals             -ne        !=     
+Greater Than           -gt        >      
+Less Than              -lt        <      
+Greater or Equals      -ge        >=     
+Less Than or Equals    -le        <= 
+
+
+LOOP
+for VAR_NAME in ARRAY
+do
+  command1
+  command2
+done
+
+
+PASSED ARGUMENTS
+./script.sh arg1 arg2
+$0:"script.sh"
+$1:"arg1"
+$2:"arg2"

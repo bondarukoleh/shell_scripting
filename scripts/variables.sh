@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 QUOTES_NAME="Name with quotes"
 # Without quotes only text without spaces, can contain "_" and digits, but not start from digits.
 WITH_OUT_QUOTES=with_out_quotes
