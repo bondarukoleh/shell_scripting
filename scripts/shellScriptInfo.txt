@@ -85,3 +85,13 @@ read -p "Text of prompt (hint) what you are expecting user should input" VARIABL
 
 read -p "Please enter your name: " USER_NAME
 echo "You're name is $USER_NAME"
+
+
+EXIT STATUS
+Every command return an exit status, integer range 0 to 255
+Not 0 code - stands for some error.
+
+$? - contains previous command exit code
+
+ls
+$? = 0

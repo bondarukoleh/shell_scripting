@@ -25,7 +25,7 @@ echo $FILES
 
 for FILE in $FILES
 do
-  echo "Will work with $FILE"
+  echo "Will rename $FILE"
   echo "Add $DATE to $FILE name"
   mv "${PATH_TO_FILES}/${FILE}" "${PATH_TO_FILES}/${FILE}-${DATE}.txt"
 done
