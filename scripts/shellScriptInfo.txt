@@ -97,6 +97,20 @@ Every command return an exit status, integer range 0 to 255
 Exit code != 0 is stand for some error.
 
 $? - contains previous command exit code
-
 ls
 $? = 0
+
+We can set the exit status of script we running.
+...
+if [ some_command_failed ]
+then 
+  exit 1
+fi
+...
+
+
+SEMICOLON
+We can concatinate several commands with ";"
+$>do_something ; do_something_else ; do_third ;
+$? - exit status - will be the last exit status of command in sequence.
+Everything will be executed no matter exit status.
