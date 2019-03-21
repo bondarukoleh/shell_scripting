@@ -9,7 +9,8 @@ fi
 # Doesn't work with "not empty string", Err -too many arguments
 SOME_STRING1="not_empty_string"
 SOME_STRING2="not_empty_string"
-if [ -n $SOME_STRING1 ]
+EMPTY_STRING=""
+if [ -n $SOME_STRING1 ] && [ -z $EMPTY_STRING ]
 then
 	echo "$SOME_STRING1 - is not empty"
 fi

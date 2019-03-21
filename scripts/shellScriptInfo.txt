@@ -16,11 +16,11 @@ To use variable put "My $VAR_NAME string" before name, ore "My ${VAR_NAME} strin
 
 CONDITIONS
 We can create conditions:
-if [ condition_to_test ] 
+if [ condition_to_test && condition_to_test ]  
 then
   command1
   command2
-elseif [next_condition_to_test ]
+elseif [ next_condition_to_test || next_condition_to_test ]
 then
   command3
   command4
@@ -28,6 +28,11 @@ else
   command5
   command6
 fi (if spelled backwards)
+
+Note: we can use AND vs OR in our commands, like $>cp text.txt /tmp/inner || cp text.txt /tmp
+if /tmp/inner folder doesn't exists - it will copy to /tmp.
+ (sic!) - Command after AND will be executed only if previous returned 0;
+ (sic!) - Command after OR will be executed only if previous returned 1;
 
 If we meet conditions - condition return true, and command exits with status 0, if not - false - 1 status.
 
@@ -89,7 +94,7 @@ echo "You're name is $USER_NAME"
 
 EXIT STATUS
 Every command return an exit status, integer range 0 to 255
-Not 0 code - stands for some error.
+Exit code != 0 is stand for some error.
 
 $? - contains previous command exit code
 
