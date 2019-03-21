@@ -108,6 +108,9 @@ then
 fi
 ...
 
+If we don't use exit in our script - last command exit code will be used for entire script.
+Whenever exit command is reached in script - it stops running.
+We can prit $? even ehen script is passes, no matter when, it allways keep status of previous command.
 
 SEMICOLON
 We can concatinate several commands with ";"
