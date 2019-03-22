@@ -128,3 +128,16 @@ name(){}
 name "some value"
 Call function WITHOUT parentheses
 All function should, include inner called should be declared before they are called.
+
+Functions can have parameters $1 - first, $2 - second, $@ - all, like script params.
+But not $0 - it's the shell script file itself.
+
+By default all variables in script are global, so you can use them in functions if they were defined before function
+call, so they can be defined after function definition, since they are global, but they should be defined before 
+function called.
+
+Variables defined in function became global after function run - and in most cases it's not good, so there is 
+"local" keywork that we can use in functions only, to restricr inner variables became global. So that's the best way
+is to declare function inner.
+ 
+
