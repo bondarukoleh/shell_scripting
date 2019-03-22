@@ -14,6 +14,10 @@ VARIABLE_NAME="value" - no spaces, by convention variable name in upper case. Ca
 Without quotes only text without spaces, can contain "_" and digits, but not start from digits.
 To use variable put "My $VAR_NAME string" before name, ore "My ${VAR_NAME} string"
 
+We can store commands output in variables.
+PING_GOOGLE=$(ping -c 1 google.com)
+tells to run ping and write it's output to variable
+
 CONDITIONS
 We can create conditions:
 if [ condition_to_test && condition_to_test ]  
@@ -140,4 +144,9 @@ Variables defined in function became global after function run - and in most cas
 "local" keywork that we can use in functions only, to restricr inner variables became global. So that's the best way
 is to declare function inner.
  
-
+Functions has return code, allign with scripts. Two types:
+ - Explicit: {... return 1}
+ - Emplicit: {... returns exit status of last runned command in function }
+Difference with "exit 1" called in function - "exit" will exit script immediately, stop running it in current line,
+"return" will just exit from function with status code, but not terminatesthe script running.
+Rules of return codes - is the same for all other codes.
