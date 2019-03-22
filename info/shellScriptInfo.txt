@@ -125,5 +125,6 @@ FUNCTIONS
 function name(){}
 name(){}
 
-
-
+name "some value"
+Call function WITHOUT parentheses
+All function should, include inner called should be declared before they are called.

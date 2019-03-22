@@ -3,6 +3,11 @@ L="HAHA"
 
 function echoArg(){
   echo $1
+  innerCall
 }
 
-echoArg $L
+function innerCall(){
+  echo "Called inner function"
+}
+
+echoArg "HAHA"
