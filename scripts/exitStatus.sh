@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 HOST="google.com"
-PING_GOOGLE="ping -c 1 google.c1om"
+PING_GOOGLE="ping -c 1 google.co1m"
 $PING_GOOGLE
 PING_EXIT_STATUS=$?
 
@@ -17,8 +17,8 @@ then
     echo "$HOST is NOT reachable!!!"
     exit 1
 fi 
-$PING_GOOGLE || echo "$HOST is NOT reachable!!!" ; exit 1 #If we couldn't ping google - we will print message
 
-`pwd`/scripts/helpers/returnExitStatus5.sh
+$PING_GOOGLE || eval "echo $HOST is NOT reachable!!! ; exit 4"  #If we couldn't ping google - we will print message
+`pwd`/scripts/helpers/checkFile.sh `pwd`/info
 echo "exit status of LAST SCRIPT IS - $?"
 exit 0
