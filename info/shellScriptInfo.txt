@@ -90,6 +90,8 @@ $@:"arg1 arg2=value"
 
 So 0 argument - is useless in most cases from my side, it's pointing on script that was passed to bash
 
+shift - is used to shift position of parameters to the left, means delete first argument.
+
 STDIN
 We can read from stdin
 read -p "Text of prompt (hint) what you are expecting user should input" VARIABLE_TO_STORE_USERS_INPUT
@@ -178,6 +180,7 @@ from script, or set needed pass in script where you wanted to search files.
 
 SWITCH CASE
 Patterns are case sensetive.
+Wildcards can be used as patterns, [asd]*.txt) command ;;
 
 case $VARIABLE in
   pattern1)
@@ -187,3 +190,23 @@ case $VARIABLE in
     comand_to_run2
     ;;
 esac
+
+LOGGING
+Who, what, where, when, why.
+
+Linux syslog (system log) uses facilities and severities to categorize message.
+Facilities: kern, user, nail, daemon. auth. local0, local7
+Severities: emerg, alert, crit, err, warning, notice, info, debug
+Each message labeled with facilitie code and severity level. For example messages with mail facilitie - comes from applications
+that handeling mail. If you need to log them - you better use mail facilitie. If you not sure what facilitie to use - use 
+user facilitie. local0 - local7 - custom logs.
+
+Log files locations are configurable
+/var/log/messages
+/var/log/syslog
+
+-p: logger -p local10.info "message" - add facilitie to your message;
+-s: logger -s local10.info "message" - add severity to your message;
+-t: logger -i -s my_shell_script -p local0.info "message" - tag your message tith script name, will be easily to search.
+-i: logger -i -t script "Message" - add an PID (-i) to message.
+
