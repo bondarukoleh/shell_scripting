@@ -174,3 +174,15 @@ Wildcards:
 
 Pay attention on working  directory where are you running search, you should either cd to directory
 from script, or set needed pass in script where you wanted to search files.
+
+
+SWITCH CASE
+
+case $VARIABLE in
+  pattern1
+    command_to_run1
+    ;;
+  pattern2
+    comand_to_run2
+    ;;
+esac
