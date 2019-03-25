@@ -146,7 +146,7 @@ is to declare function inner.
  
 Functions has return code, allign with scripts. Two types:
  - Explicit: {... return 1}
- - Emplicit: {... returns exit status of last runned command in function }
+ - Implicit: {... returns exit status of last runned command in function }
 Difference with "exit 1" called in function - "exit" will exit script immediately, stop running it in current line,
 "return" will just exit from function with status code, but not terminatesthe script running.
 Rules of return codes - is the same for all other codes.
