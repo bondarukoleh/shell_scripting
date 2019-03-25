@@ -150,3 +150,26 @@ Functions has return code, allign with scripts. Two types:
 Difference with "exit 1" called in function - "exit" will exit script immediately, stop running it in current line,
 "return" will just exit from function with status code, but not terminatesthe script running.
 Rules of return codes - is the same for all other codes.
+
+WILDCARDS
+A character or string that used for pattern matching names of files, or directories.
+Wildcards:
+ * - 0 or more characters, matching anything, *.txt; a*; a*.txt;
+ ? - 1 charachter, ?.txt; a?; a?.txt; 
+ [charachter class] - matches any of the characters included in brackets, matches only 1 charachter.
+    [aeiou] - any of the vowels (гласные) in name;
+        ca[nt]* - can, cat, candy, catch.
+    ! - NOT current pattern
+        ca[!nt]* - any name started 'ca' but not followed by 'n', or 't'
+    [a-g], [1-5] Range of charachters.
+    Predifined name charachter classes
+        [[:alpha:]] - lower and uppercase alphabetic character
+        [[:alnum:]] - alphanumeric, means alphabetic character and digits
+        [[:digit:]] - numbers in decimal [0-9]
+        [[:lower:]] - lower alphabetic character
+        [[:space:]] - whitespace
+        [[:upper:]] - upper alphabetic character
+    \ - escape wildcard symbol to use as a usual one
+        question\?andAsterisk\*inName - "question?andAsterisk*inName" - name.
+
+
