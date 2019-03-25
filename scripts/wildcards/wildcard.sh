@@ -8,7 +8,9 @@
 # ls ?.txt # check the output befor deleting
 # rm ?.txt # delete needed files
 
+cd ./scripts
 for SCRIPT_FILE in *.sh
 do 
   echo "found $SCRIPT_FILE"
 done
+cd ..

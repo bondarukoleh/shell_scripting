@@ -172,4 +172,5 @@ Wildcards:
     \ - escape wildcard symbol to use as a usual one
         question\?andAsterisk\*inName - "question?andAsterisk*inName" - name.
 
-
+Pay attention on working  directory where are you running search, you should either cd to directory
+from script, or set needed pass in script where you wanted to search files.
