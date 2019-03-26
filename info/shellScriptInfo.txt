@@ -210,3 +210,12 @@ Log files locations are configurable
 -t: logger -i -s my_shell_script -p local0.info "message" - tag your message tith script name, will be easily to search.
 -i: logger -i -t script "Message" - add an PID (-i) to message.
 
+WHILE LOOP
+while [ condition ]
+do
+  command1
+  command2
+done
+
+Conditions could be file exists, variable with some value, or command exit status, as we rememberthat exit status 0 - true, 
+else is false.
