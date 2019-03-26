@@ -73,11 +73,13 @@ Greater or Equals      -ge        >=
 Less Than or Equals    -le        <= 
 
 
-LOOP
+FOR LOOP
 for VAR_NAME in ARRAY
 do
   command1
   command2
+  [ condition_to_exit ] && break
+  [ condition_to_continue ] && continue
 done
 
 
@@ -210,3 +212,17 @@ Log files locations are configurable
 -t: logger -i -s my_shell_script -p local0.info "message" - tag your message tith script name, will be easily to search.
 -i: logger -i -t script "Message" - add an PID (-i) to message.
 
+WHILE LOOP
+while [ condition ] or
+ls | while read FILE or
+while read LINE
+do
+  command N
+  [ condition_to_exit ] && break #exit loop
+  [ condition_to_continue ] && continue
+done
+done < /path_to_file/file # means read file, not working with txt on mac
+
+Condition - variable value, command, etc.
+You can redirect the contents of a file as input for a while loop 
+as well as redirecting output of a command into a while loop using a pipe.
