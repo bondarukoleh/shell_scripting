@@ -26,3 +26,13 @@ if [ $ARG1 -gt $ARG2 ]
 then
 	echo "$ARG1 - is greater than - $ARG2"
 fi
+
+
+BOOLEAN=true
+if $BOOLEAN # or [ $BOOLEAN ] 
+then 
+  echo "Boolean value shouldn't be quoted"
+fi
+$BOOLEAN && echo "&& fires if variable is true"
+BOOLEAN=false
+$BOOLEAN || echo "|| fires if variable is false"

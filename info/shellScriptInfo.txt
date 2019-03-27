@@ -226,3 +226,36 @@ done < /path_to_file/file # means read file, not working with txt on mac
 Condition - variable value, command, etc.
 You can redirect the contents of a file as input for a while loop 
 as well as redirecting output of a command into a while loop using a pipe.
+
+DEBUGGING
+-x
+Prints commands as the execute, called an x-trace.
+Sometimes prints not value that command gets.
+#!/usr/bin/env bash -x or
+set -x # to start debugging
+commands
+set +x # to finish
+
+-e
+Exit script when any command return exit status different from 0
+can be combined with x. -ex
+
+-v
+Prints shell input lines as they are read by interpreter.
+With -x - usefull thing is we can se how command looks in shell script (-v)
+and how it looks by interpreter (-x) 
+
+PS4 (works with -x flag)
+It's a build in variable that printed before each command bash displayed in 
+execution trace. We ca use it to make our script execution more clear.
+PS4="+ $BASH_SOURCE : $LINENO : "
+$BASH_SOURCE - buildin var in bash to display script source 
+$LINENO - line number in script
+
+Carret returns symbols
+In linux - it's CRLF (^M) symbol, and it different from windows.
+If you want to see them in your file run 
+cat -v my_script.sh (not working om mac some reason)
+So sometimes, errors appeared when you passing your script from windows
+to linux systems. (maybe you should add an .gitattibutes file to your project)
+To fix some of that problems. For example delete extra carret return we can use dos2unix/unix2dos utility.
