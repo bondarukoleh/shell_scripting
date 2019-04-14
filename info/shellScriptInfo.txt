@@ -1,4 +1,15 @@
 Script
+Bash is one of many available Unix shells. Bash stands for "Bourne Again SHell", and is a replacement/improvement
+of the original Bourne shell (sh).
+The terms are often used interchangeably because Bash, with its extended functionality as compared to sh,
+is the one most commonly used to execute user scripts in many distributions. However, there are other shells such
+as the Korn (ksh), C shell (csh) and the Z shell (zsh). Ubuntu consider dash as default sheck.
+
+Shells rely on POSIX. Portable Operating System Interface is a family of standards for maintaining compatibility
+between operating systems. POSIX defines the application programming interface (API), along with command line shells
+and utility interfaces, for software compatibility with variants of Unix and other operating systems.
+
+
 Command line programm that contains a series of commands.
 Shell access the interpreter and executes commands in script one by another.
 Script either in PATH variable (you can execute it from everywhere) or you can execute in with "./path_to_script/scr.sh"
