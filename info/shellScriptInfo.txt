@@ -275,3 +275,22 @@ cat -v my_script.sh (not working om mac some reason)
 So sometimes, errors appeared when you passing your script from windows
 to linux systems. (maybe you should add an .gitattibutes file to your project)
 To fix some of that problems. For example delete extra carret return we can use dos2unix/unix2dos utility.
+
+
+Work in console.
+ls -i -show inods (indexes) files, directories
+mkdir -p - creates any parent directory, even if they don't existing
+touch file_name - creates new file, or update last modifiet date for existing
+echo 'some info' > file_name - whrite (re-write) info to file, >> - append info to file. 
+cat file_name - prints it in console
+cp file_name folder - copy file_name in folder
+mv - rename, move files, directories
+ln, ln -s (symlink) - creates link on files, on directories - only symlinks
+
+globbing, jokers, Wildcards
+for example we have file1, file2, file3, dont delete 3 times, do it once
+$>rm file[1-3]/file*
+
+grep - skans file content by set regex
+$>cat file | grep wor[d]
+$>grep my_worl[d|\b] file
