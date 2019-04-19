@@ -312,3 +312,27 @@ AWK pattern file - pattern - is full regex, awk '{print $1 $2}' - prints first, 
 SED - stream editor.
 MORE/LESS file_name - filter for displaying text, also a reader of files, file is to long to display, you can read
   it with less, and find text by patterns in reader. Man is used one of those as far as I get it.
+
+SSH
+Secure shell - protocol of secure access to remote machines, environments, etc.
+Clients: mac - terminal, iTerm2, Wind - Putty, OpenSSH
+RSA - asymetric cryptography algorithm of generating public/private keys.
+
+Two-factored autintefication.
+You have two keys, public and private. Bob also has two keys.
+I first get the Bob public key, and encrypt with it my message to Bob. Even I cannot decrypt my own message that 
+I encrypted with Bob's public key. Only Bob can decrypt message with his private key.
+And vise versa - Bob first get my public key, encrypt message, and I can decrypt it with my private key. 
+
+And ssh tounel works a-like this. Machine where you put your public key - is Bob. Bob using your public key
+to encript a message to you, if you decrypt this message with your private key - you send him back an answer.
+That proves that you're ok, and ssh tounel established. Messages are sent between server and client using their 
+public keys.
+
+Keys should be in ".ssh" folder in your "home" folder. Don't forget to "chmod 700 .shh" - to more securenes
+file authoraized_keys in .shh folder "chmod 600 authoraized_keys"
+keys can be generated with "shh-keygen", enter a pass-phrase.
+
+id_rsa_pub - is a key that you should put in .shh folder on machine you wnt to connect to.
+id_rsa - it's ypur private key, that you should keep in .ssh folder on machine from whitch you want to connect.
+(pem - from AWS, ppk - from Putty for example)
