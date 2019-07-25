@@ -334,8 +334,11 @@ file authoraized_keys in .shh folder "chmod 600 authoraized_keys"
 keys can be generated with "shh-keygen", enter a pass-phrase.
 
 id_rsa_pub - is a key that you should put in .shh folder on machine you wnt to connect to.
-id_rsa - it's ypur private key, that you should keep in .ssh folder on machine from whitch you want to connect.
+id_rsa - it's your private key, that you should keep in .ssh folder on machine from witch you want to connect.
 (pem - from AWS, ppk - from Putty for example)
+
+The known_hosts file lets the client authenticate the server.
+The authorized_keys file lets the server authenticate the user.
 
 Note about commands run:
 A; B    # Run A and then B, no matter of success or fail of A
