@@ -3,3 +3,6 @@
 CREDENTIALS="User=Bob\nPass=1111";
 
 echo $CREDENTIALS > newFile.env;
+
+# append
+echo $CREDENTIALS >> newFile.env;
