@@ -320,9 +320,15 @@ RSA - asymetric cryptography algorithm of generating public/private keys.
 
 Two-factored autintefication.
 You have two keys, public and private. Bob also has two keys.
-I first get the Bob public key, and encrypt with it my message to Bob. Even I cannot decrypt my own message that 
-I encrypted with Bob's public key. Only Bob can decrypt message with his private key.
-And vise versa - Bob first get my public key, encrypt message, and I can decrypt it with my private key. 
+For me to speak with Bob - I need to pass to him my public key.
+Bob stores a public key, and names it Oleh for instance.
+When I'm initiating ssh connection with Bob - Bob encrypt hello message with stored
+mine public key - and sends to me. I decrypt it with my private key - and answer 
+hello back, that's how Bob knows that I'm Oleh, and I have my private key.
+And vise versa, if Bob wants to speak with me via ssh - he needs to pass me his public
+key, I will encrypt the message with his private key and I cannot even decrypt my own
+message that I've encrypted with Bob's public key - only Bob can decrypt message with
+his private key.
 
 And ssh tounel works a-like this. Machine where you put your public key - is Bob. Bob using your public key
 to encript a message to you, if you decrypt this message with your private key - you send him back an answer.
