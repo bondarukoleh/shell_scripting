@@ -2,7 +2,7 @@ Script
 Shell was the original Unix shell developed by Stephen Bourne - released in 1977, loops, conditions,
 all simple constructions here.
 Bash - released in 1989, and add history, some environment variables and many other stuff.
-Zsh - child of Csh, in 1990. Ow-My-Zsh - (as extentions as I got) - has themes, plugins, and a lot of sugar.
+Zsh - child of Csh, in 1990. Ow-My-Zsh - (as extensions as I got) - has themes, plugins, and a lot of sugar.
 
 Bash is one of many available Unix shells. Bash stands for "Bourne Again SHell", and is a replacement/improvement
 of the original Bourne shell (sh) was developed later by Brian Fox and much extended the original sh.
@@ -15,7 +15,7 @@ between operating systems. POSIX defines the application programming interface (
 and utility interfaces, for software compatibility with variants of Unix and other operating systems.
 
 Script
-Command line programm that contains a series of commands.
+Command line programme that contains a series of commands.
 Shell access the interpreter and executes commands in script one by another.
 Script either in PATH variable (you can execute it from everywhere) or you can execute in with "./path_to_script/scr.sh"
 
@@ -54,7 +54,7 @@ if /tmp/inner folder doesn't exists - it will copy to /tmp.
  (sic!) - Command after AND will be executed only if previous returned 0;
  (sic!) - Command after OR will be executed only if previous returned 1;
 Also we can use condition statements in terminal $>[ -d ./dor_path_to_check ] && do_something (if dir exists - action)
-But aware that "success" || "not_runned" && "runned" - if success - that it passes next OR and run next AND.
+But aware that "success" || "not_run" && "run" - if success - that it passes next OR and run next AND.
 
 If we meet conditions - condition return true, and command exits with status 0, if not - false - 1 status.
 
@@ -137,10 +137,10 @@ fi
 If we don't use exit in our script - last command exit code will be used for entire script.
 Whenever exit command is reached in script - it stops running.
 We can print "$?" even when script has run already, no matter when,
-it allways keep status of previous command.
+it always keep status of previous command.
 
 SEMICOLON
-We can concatinate several commands with ";"
+We can concatenate several commands with ";"
 $>do_something ; do_something_else ; do_third ;
 $? - exit status - will be the last exit status of command in sequence.
 Everything will be executed no matter exit status.
@@ -161,12 +161,12 @@ call, so they can be defined after function definition, since they are global, b
 function called.
 
 Variables defined in function became global after function run - and in most cases it's not good, so there is 
-"local" keywork that we can use in functions only, to restricr inner variables became global. So that's the best way
+"local" keyword that we can use in functions only, to restrict inner variables became global. So that's the best way
 is to declare function inner.
  
-Functions has return code, allign with scripts. Two types:
+Functions has return code, align with scripts. Two types:
  - Explicit: {... return 1}
- - Implicit: {... returns exit status of last runned command in function }
+ - Implicit: {... returns exit status of last run command in function }
 Difference with "exit 1" called in function - "exit" will exit script immediately, stop running it in current line,
 "return" will just exit from function with status code, but not terminatesthe script running.
 Rules of return codes - is the same for all other codes.
@@ -175,14 +175,14 @@ WILDCARDS
 A character or string that used for pattern matching names of files, or directories.
 Wildcards:
  * - 0 or more characters, matching anything, *.txt; a*; a*.txt;
- ? - 1 charachter, ?.txt; a?; a?.txt; 
- [charachter class] - matches any of the characters included in brackets, matches only 1 charachter.
+ ? - 1 character, ?.txt; a?; a?.txt; 
+ [character class] - matches any of the characters included in brackets, matches only 1 charachter.
     [aeiou] - any of the vowels (гласные) in name;
         ca[nt]* - can, cat, candy, catch.
     ! - NOT current pattern
         ca[!nt]* - any name started 'ca' but not followed by 'n', or 't'
-    [a-g], [1-5] Range of charachters.
-    Predifined name charachter classes
+    [a-g], [1-5] Range of characters.
+    Predefined name character classes
         [[:alpha:]] - lower and uppercase alphabetic character
         [[:alnum:]] - alphanumeric, means alphabetic character and digits
         [[:digit:]] - numbers in decimal [0-9]
@@ -197,7 +197,7 @@ from script, or set needed pass in script where you wanted to search files.
 
 
 SWITCH CASE
-Patterns are case sensetive.
+Patterns are case sensitive.
 Wildcards can be used as patterns, [asd]*.txt) command ;;
 
 case $VARIABLE in
@@ -205,7 +205,7 @@ case $VARIABLE in
     command_to_run1
     ;;
   pattern2)
-    comand_to_run2
+    command_to_run2
     ;;
 esac
 
@@ -215,9 +215,9 @@ Who, what, where, when, why.
 Linux syslog (system log) uses facilities and severities to categorize message.
 Facilities: kern, user, nail, daemon. auth. local0, local7
 Severities: emerg, alert, crit, err, warning, notice, info, debug
-Each message labeled with facilitie code and severity level. For example messages with mail facilitie - comes from applications
-that handeling mail. If you need to log them - you better use mail facilitie. If you not sure what facilitie to use - use 
-user facilitie. local0 - local7 - custom logs.
+Each message labeled with facility code and severity level. For example messages with mail facilitie - comes from applications
+that handling mail. If you need to log them - you better use mail facility. If you not sure what facilitie to use - use 
+user facility. local0 - local7 - custom logs.
 
 Log files locations are configurable
 /var/log/messages
@@ -258,14 +258,14 @@ can be combined with x. -ex
 
 -v
 Prints shell input lines as they are read by interpreter.
-With -x - usefull thing is we can se how command looks in shell script (-v)
+With -x - useful thing is we can se how command looks in shell script (-v)
 and how it looks by interpreter (-x) 
 
 PS4 (works with -x flag)
 It's a build in variable that printed before each command bash displayed in 
 execution trace. We ca use it to make our script execution more clear.
 PS4="+ $BASH_SOURCE : $LINENO : "
-$BASH_SOURCE - buildin var in bash to display script source 
+$BASH_SOURCE - building var in bash to display script source 
 $LINENO - line number in script
 
 Carret returns symbols
@@ -273,15 +273,15 @@ In linux - it's CRLF (^M) symbol, and it different from windows.
 If you want to see them in your file run 
 cat -v my_script.sh (not working om mac some reason)
 So sometimes, errors appeared when you passing your script from windows
-to linux systems. (maybe you should add an .gitattibutes file to your project)
+to linux systems. (maybe you should add an .gitattributes file to your project)
 To fix some of that problems. For example delete extra carret return we can use dos2unix/unix2dos utility.
 
 
 Work in console.
 ls -i -show inods (indexes) files, directories
 mkdir -p - creates any parent directory, even if they don't existing
-touch file_name - creates new file, or update last modifiet date for existing
-echo 'some info' > file_name - whrite (re-write) info to file, >> - append info to file. 
+touch file_name - creates new file, or update last modified date for existing
+echo 'some info' > file_name - write (re-write) info to file, >> - append info to file. 
 cat file_name - prints it in console
 cp file_name folder - copy file_name in folder
 mv - rename, move files, directories
@@ -291,24 +291,24 @@ globbing, jokers, Wildcards
 for example we have file1, file2, file3, dont delete 3 times, do it once
 $>rm file[1-3]/file*
 
-grep - skans file content by set regex
+grep - scans file content by set regex
 $>cat file | grep wor[d]
-$>grep my_worl[d|\b] file
+$>grep my_word[d|\b] file
 
 ps aux - show all processes
 kill -s SIGKILL/SIGSTOP/ - kill process
-find /plece/where_to_search -type f/d/l(symlink) -name 'filename' -regex ^some[reg]ex$
+find /place/where_to_search -type f/d/l(symlink) -name 'filename' -regex ^some[reg]ex$
 
 Work with files
-SORT - The sort utility sorts text and binary files by lines. By default - in alfabetical.
+SORT - The sort utility sorts text and binary files by lines. By default - in alphabetical.
 UNIQ - Needed sort before doing kob this filter removes duplicate lines from a sorted file.
 HEAD/TAIL - prints first/last 10 rows
 GREP 'regex_pattern' file_name -i (ignore case) - A multi-purpose file search tool uses Regular Expressions
-  gerep -E - extended Regex, for example with boolean operators 'word1|word2',
-  -r - seach in multiple files - prints full path to file, or 
-WC - words count, -w - words, -l - lines, -m charachters.
+  grep -E - extended Regex, for example with boolean operators 'word1|word2',
+  -r - search in multiple files - prints full path to file, or 
+WC - words count, -w - words, -l - lines, -m characters.
 AWK pattern file - pattern - is full regex, awk '{print $1 $2}' - prints first, and second word from file,
-  it's a language for processing text files. Abbreviature from authors.
+  it's a language for processing text files. Abbreviator from authors.
 SED - stream editor.
 MORE/LESS file_name - filter for displaying text, also a reader of files, file is to long to display, you can read
   it with less, and find text by patterns in reader. Man is used one of those as far as I get it.
@@ -316,9 +316,9 @@ MORE/LESS file_name - filter for displaying text, also a reader of files, file i
 SSH
 Secure shell - protocol of secure access to remote machines, environments, etc.
 Clients: mac - terminal, iTerm2, Wind - Putty, OpenSSH
-RSA - asymetric cryptography algorithm of generating public/private keys.
+RSA - asymmetric cryptography algorithm of generating public/private keys.
 
-Two-factored autintefication.
+Two-factored Authentication.
 You have two keys, public and private. Bob also has two keys.
 For me to speak with Bob - I need to pass to him my public key.
 Bob stores a public key, and names it Oleh for instance.
@@ -330,13 +330,13 @@ key, I will encrypt the message with his private key and I cannot even decrypt m
 message that I've encrypted with Bob's public key - only Bob can decrypt message with
 his private key.
 
-And ssh tounel works a-like this. Machine where you put your public key - is Bob. Bob using your public key
-to encript a message to you, if you decrypt this message with your private key - you send him back an answer.
-That proves that you're ok, and ssh tounel established. Messages are sent between server and client using their 
+And ssh tunnel works a-like this. Machine where you put your public key - is Bob. Bob using your public key
+to encrypt a message to you, if you decrypt this message with your private key - you send him back an answer.
+That proves that you're ok, and ssh tunnel established. Messages are sent between server and client using their 
 public keys.
 
 Keys should be in ".ssh" folder in your "home" folder. Don't forget to "chmod 700 .shh" - to more securenes
-file authoraized_keys in .shh folder "chmod 600 authoraized_keys"
+file authorized_keys in .shh folder "chmod 600 authorized_keys"
 keys can be generated with "shh-keygen", enter a pass-phrase.
 
 id_rsa_pub - is a key that you should put in .shh folder on machine you wnt to connect to.
